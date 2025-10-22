@@ -5,7 +5,7 @@ const { fetch, ensureDir } = require('./lib/download');
 const { verify } = require('./lib/checksum');
 
 const VERSION = process.env.VEX_VERSION || '0.1.0';
-const REPO = process.env.VEX_REPO || 'poqgo/VexLanguage';
+const REPO = process.env.VEX_REPO || 'JackDawsonX3/VexLanguage';
 const BASE  = process.env.VEX_BASE  || `https://github.com/${REPO}/releases/download/v${VERSION}`;
 
 async function main() {
