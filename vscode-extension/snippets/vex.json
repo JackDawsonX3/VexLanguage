@@ -1,0 +1,17 @@
+{
+  "print": {
+    "prefix": "print",
+    "body": [
+      "print(\"$1\")"
+    ],
+    "description": "print a string"
+  },
+  "main": {
+    "prefix": "main",
+    "body": [
+      "// main.vl",
+      "print(\"Hello from Vex\")"
+    ],
+    "description": "hello template"
+  }
+}

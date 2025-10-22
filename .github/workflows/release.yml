@@ -1,0 +1,73 @@
+name: release
+on:
+  push:
+    tags: ['v*.*.*']
+  workflow_dispatch: {}
+
+jobs:
+  build-binaries:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - os: linux   # GOOS
+            arch: x64
+            goarch: amd64
+            ext: ""
+          - os: linux
+            arch: arm64
+            goarch: arm64
+            ext: ""
+          - os: macos
+            arch: x64
+            goarch: amd64
+            ext: ""
+          - os: macos
+            arch: arm64
+            goarch: arm64
+            ext: ""
+          - os: win
+            arch: x64
+            goarch: amd64
+            ext: ".exe"
+          - os: win
+            arch: arm64
+            goarch: arm64
+            ext: ".exe"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with: { go-version: '1.21' }
+      - name: Build
+        env:
+          GOOS: ${{ matrix.os == 'win' && 'windows' || (matrix.os == 'macos' && 'darwin' || 'linux') }}
+          GOARCH: ${{ matrix.goarch }}
+        run: |
+          mkdir -p dist
+          TAG="${GITHUB_REF_NAME#refs/tags/}"
+          OUT="vex-${{ matrix.os }}-${{ matrix.arch }}-${TAG}${{ matrix.ext }}"
+          (cd compiler && go build -ldflags "-s -w -X main.Version=${TAG#v}" -o "../dist/${OUT}" .)
+          chmod +x "dist/${OUT}" || true
+      - name: Checksums
+        run: |
+          cd dist
+          for f in vex-*; do sha256sum "$f" | awk '{print $1}' > "$f.sha256"; done
+      - name: Upload Release Assets
+        uses: softprops/action-gh-release@v2
+        with: { files: dist/vex-* }
+        env: { GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} }
+
+  publish-npm:
+    needs: build-binaries
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20', registry-url: 'https://registry.npmjs.org' }
+      - name: Align npm version to tag
+        run: |
+          TAG="${GITHUB_REF_NAME#refs/tags/}"
+          sed -i "s/\"version\": \"0.1.0\"/\"version\": \"${TAG#v}\"/g" packages/vex/package.json
+      - name: Publish
+        run: cd packages/vex && npm publish --access public
+        env: { NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }} }

@@ -1,0 +1,25 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Vex: Run current file",
+      "type": "shell",
+      "command": "vex run ${file}",
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Vex: Build project (web)",
+      "type": "shell",
+      "command": "vex build --target=web --out=dist/main.js",
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Vex: Init project (here)",
+      "type": "shell",
+      "command": "vex init .",
+      "problemMatcher": []
+    }
+  ]
+}

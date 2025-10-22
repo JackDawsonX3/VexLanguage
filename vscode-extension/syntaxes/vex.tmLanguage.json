@@ -1,0 +1,31 @@
+{
+  "scopeName": "source.vex",
+  "patterns": [
+    {
+      "name": "comment.line.vex",
+      "match": "//.*$"
+    },
+    {
+      "name": "comment.block.vex",
+      "begin": "/\\*",
+      "end": "\\*/"
+    },
+    {
+      "name": "keyword.control.vex",
+      "match": "\\b(if|else|for|while|return)\\b"
+    },
+    {
+      "name": "storage.type.vex",
+      "match": "\\b(let|const|fn)\\b"
+    },
+    {
+      "name": "constant.numeric.vex",
+      "match": "\\b[0-9]+(\\.[0-9]+)?\\b"
+    },
+    {
+      "name": "string.quoted.double.vex",
+      "begin": "\"",
+      "end": "\""
+    }
+  ]
+}

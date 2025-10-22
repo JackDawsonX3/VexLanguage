@@ -1,0 +1,17 @@
+{
+  "version": "0.1.0",
+  "description": "VexLanguage compiler",
+  "homepage": "https://github.com/poqgo/VexLanguage",
+  "license": "MIT",
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/poqgo/VexLanguage/releases/download/v0.1.0/vex-win-x64-0.1.0.exe",
+      "hash": "<FILL_ME>"
+    },
+    "arm64": {
+      "url": "https://github.com/poqgo/VexLanguage/releases/download/v0.1.0/vex-win-arm64-0.1.0.exe",
+      "hash": "<FILL_ME>"
+    }
+  },
+  "bin": "vex.exe"
+}

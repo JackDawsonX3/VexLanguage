@@ -1,0 +1,2 @@
+@echo off
+node "/mnt/data/VexLanguage_full/tools/dev-binary/vex-dev.js" %*

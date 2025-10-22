@@ -1,0 +1,16 @@
+Id: VexLanguage.Vex
+Publisher: VexLanguage
+Name: Vex
+Version: 0.1.0
+AppMoniker: vex
+PublisherUrl: https://github.com/poqgo/VexLanguage
+License: MIT
+Installers:
+  - Architecture: x64
+    InstallerType: portable
+    InstallerUrl: https://github.com/poqgo/VexLanguage/releases/download/v0.1.0/vex-win-x64-0.1.0.exe
+    InstallerSha256: <FILL_ME>
+  - Architecture: arm64
+    InstallerType: portable
+    InstallerUrl: https://github.com/poqgo/VexLanguage/releases/download/v0.1.0/vex-win-arm64-0.1.0.exe
+    InstallerSha256: <FILL_ME>

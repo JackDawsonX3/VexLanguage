@@ -1,0 +1,42 @@
+{
+  "name": "vscode-vexlanguage",
+  "displayName": "VexLanguage",
+  "publisher": "vex",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "+1.80.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "icon": "images/icon.png",
+  "contributes": {
+    "languages": [
+      {
+        "id": "vex",
+        "aliases": [
+          "VexLanguage",
+          "Vex",
+          "vex"
+        ],
+        "extensions": [
+          ".vl"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "vex",
+        "scopeName": "source.vex",
+        "path": "./syntaxes/vex.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "vex",
+        "path": "./snippets/vex.json"
+      }
+    ]
+  }
+}
