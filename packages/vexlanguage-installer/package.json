@@ -1,6 +1,6 @@
 {
   "name": "vexlanguage-installer",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Installer for VexLanguage native binaries (no Node at runtime).",
   "author": "JackDawsonX3 <poqgod70@gmail.com>",
   "license": "MIT",
