@@ -1,0 +1,16 @@
+@echo off
+set arg1=%1
+if "%arg1%"=="--version" goto ver
+if "%arg1%"=="-v" goto ver
+if "%arg1%"=="--help" goto help
+if "%arg1%"=="-h" goto help
+:help
+echo VexLanguage (placeholder) — commands:
+echo   vex run ^<file.vl^>     Run a Vex script
+echo   vex build ^<file.vl^>   Build a Vex target
+echo   vex version             Show version
+echo Note: This is a placeholder binary for packaging pipeline validation.
+goto end
+:ver
+echo VexLanguage 0.1.0 (MVP placeholder)
+:end

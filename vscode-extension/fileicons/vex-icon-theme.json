@@ -1,0 +1,16 @@
+{
+  "iconDefinitions": {
+    "_vex": {
+      "iconPath": "./fileicons/vex-hex.png"
+    }
+  },
+  "fileExtensions": {
+    "vl": "_vex"
+  },
+  "file": "_vex",
+  "folder": "_vex",
+  "folderExpanded": "_vex",
+  "languageIds": {
+    "vexlanguage": "_vex"
+  }
+}

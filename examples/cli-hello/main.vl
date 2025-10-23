@@ -1,0 +1,4 @@
+// examples/cli-hello/main.vl
+fn main() {
+  println("hello, cli");
+}

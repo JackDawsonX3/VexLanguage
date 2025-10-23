@@ -1,0 +1,4 @@
+// examples/web-hello/main.vl
+fn main() {
+  println("hello, web");
+}

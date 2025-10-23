@@ -1,31 +1,35 @@
 {
-  "scopeName": "source.vex",
+  "scopeName": "source.vexlanguage",
   "patterns": [
     {
-      "name": "comment.line.vex",
+      "name": "comment.line.double-slash.vl",
       "match": "//.*$"
     },
     {
-      "name": "comment.block.vex",
+      "name": "comment.block.vl",
       "begin": "/\\*",
       "end": "\\*/"
     },
     {
-      "name": "keyword.control.vex",
-      "match": "\\b(if|else|for|while|return)\\b"
+      "name": "keyword.control.vl",
+      "match": "\\b(if|else|for|while|return|break|continue)\\b"
     },
     {
-      "name": "storage.type.vex",
-      "match": "\\b(let|const|fn)\\b"
+      "name": "storage.type.vl",
+      "match": "\\b(let|const|fn|struct)\\b"
     },
     {
-      "name": "constant.numeric.vex",
-      "match": "\\b[0-9]+(\\.[0-9]+)?\\b"
+      "name": "constant.language.vl",
+      "match": "\\b(true|false|null)\\b"
     },
     {
-      "name": "string.quoted.double.vex",
+      "name": "string.quoted.double.vl",
       "begin": "\"",
       "end": "\""
+    },
+    {
+      "name": "number.vl",
+      "match": "\\b\\d+(?:\\.\\d+)?\\b"
     }
   ]
 }

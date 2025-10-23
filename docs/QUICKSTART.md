@@ -1,31 +1,24 @@
 # Quickstart
 
-## ติดตั้ง (หลังปล่อย v0.1.0 แล้ว)
-```bash
-npm i -g vex
-vex --version
-vex init my-app
-cd my-app
-vex run src/main.vl
-```
+> หมายเหตุ: การ *รันจริง* ใช้ไบนารีของ Vex เอง — **ไม่ต้องมี Node**.  
+> npm ใช้เพียงเป็นช่องทางติดตั้ง (postinstall จะ map คำสั่ง `vex` ไปยังไฟล์ไบนารี)
 
-## โหมด Build สำหรับเว็บ (เดโม)
-```bash
-# จากในโปรเจกต์
-vex build --target=web --out=dist/main.js
-# จะได้ dist/main.js ที่เปลี่ยน print("...") → console.log("...")
-node dist/main.js
-```
+## วิธี A) ติดตั้งผ่าน npm
+1. ติดตั้งแพ็กเกจ:
+   ```bash
+   npm i -g vexlanguage-installer
+   ```
+2. ทดสอบ:
+   ```bash
+   vex --version
+   vex --help
+   ```
 
-## VS Code
-- เปิดโปรเจกต์ แล้วกด `Ctrl/Cmd+Shift+B` เลือก task: *Vex: Run current file*, *Build project* หรือ *Init project*
-- ติดตั้ง extension (dev): เปิด `vscode-extension/` แล้วกด `F5`
+## วิธี B) ดาวน์โหลดไบนารีสแตนด์อโลน
+1. ไปที่หน้า Download แล้วเลือกแพลตฟอร์มของคุณ
+2. เพิ่มลงใน PATH
+3. เรียก `vex` ได้ทันที
 
-## โครงสร้างโปรเจกต์
-```
-my-app/
-├─ src/
-│  └─ main.vl
-├─ vex.toml
-└─ README.md
-```
+## VS Code Extension
+- เปิด VS Code → ค้นหา "VexLanguage" → ติดตั้ง
+- ไฟล์ `.vl` จะมีไฮไลต์และไอคอน

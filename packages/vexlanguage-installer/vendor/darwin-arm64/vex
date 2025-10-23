@@ -1,0 +1,16 @@
+        #!/usr/bin/env sh
+        # Placeholder native-like binary for demo
+        case "$1" in
+          --version|-v)
+            echo "VexLanguage 0.1.0 (MVP placeholder)"
+            ;;
+          --help|-h|*)
+            cat <<EOF
+VexLanguage (placeholder) — commands:
+  vex run <file.vl>     Run a Vex script
+  vex build <file.vl>   Build a Vex target
+  vex version           Show version
+Note: This is a placeholder binary for packaging pipeline validation.
+EOF
+            ;;
+        esac
